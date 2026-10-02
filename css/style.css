@@ -132,10 +132,15 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 }
 .header.is-scrolled {
   padding: 14px 0;
-  background: rgba(245, 230, 163, 0.82);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(245, 230, 163, 0.95);
   box-shadow: 0 1px 0 var(--line);
+}
+@media (min-width: 1025px) {
+  .header.is-scrolled {
+    background: rgba(245, 230, 163, 0.82);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
 }
 .header__inner {
   display: flex;
@@ -614,6 +619,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 }
 
 @media (max-width: 1024px) {
+  .header.is-scrolled { background: var(--bg); }
   .nav {
     position: fixed;
     inset: 0;

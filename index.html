@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ЯСНА — цветы и декор</title>
+  <meta name="description" content="Авторские букеты, композиции и декор с доставкой по городу. Цветы, которые говорят больше слов.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Unbounded:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23F5E6A3'/><text x='50' y='68' font-size='52' text-anchor='middle' font-family='Georgia' fill='%231C1B18'>Я</text></svg>">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#" class="logo" aria-label="ЯСНА — на главную">
+        <span class="logo__mark">ЯСНА</span>
+        <span class="logo__sub">цветы и декор</span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="#catalog" class="nav__link">Букеты</a>
+        <a href="#catalog" class="nav__link" data-filter="compositions">Композиции</a>
+        <a href="#catalog" class="nav__link" data-filter="decor">Декор</a>
+        <a href="#catalog" class="nav__link" data-filter="gifts">Подарки</a>
+        <a href="#about" class="nav__link">О нас</a>
+      </nav>
+
+      <div class="header__actions">
+        <button class="icon-btn" id="searchBtn" aria-label="Поиск">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.8-3.8"/></svg>
+        </button>
+        <button class="icon-btn" aria-label="Личный кабинет">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg>
+        </button>
+        <button class="icon-btn cart-btn" id="cartBtn" aria-label="Корзина">
+          <svg viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+          <span class="cart-btn__count" id="cartCount">0</span>
+        </button>
+        <button class="burger" id="burger" aria-label="Меню">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <p class="eyebrow reveal">Цветы, которые говорят<br>больше слов</p>
+        <h1 class="hero__title reveal">Букеты<br>для особенных<br>моментов</h1>
+        <a href="#catalog" class="btn btn--dark reveal">
+          Выбрать букет
+          <svg viewBox="0 0 24 24"><path d="M4 12h16m0 0-6-6m6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <div class="hero__visual">
+        <div class="hero__slides">
+          <img src="assets/img/hero-calla.png" alt="Букет белых калл" class="hero__slide is-active">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CATEGORIES ===== -->
+  <section class="cats">
+    <div class="container">
+      <div class="cats__grid">
+        <a href="#catalog" class="cat reveal" data-filter="bouquets">
+          <div class="cat__img"><img src="assets/img/cat-bouquets.png" alt="Букеты"></div>
+          <div class="cat__foot">
+            <span>Букеты</span>
+            <svg viewBox="0 0 24 24"><path d="M4 12h16m0 0-6-6m6 6-6 6"/></svg>
+          </div>
+        </a>
+        <a href="#catalog" class="cat reveal" data-filter="compositions">
+          <div class="cat__img"><img src="assets/img/cat-compositions.png" alt="Композиции"></div>
+          <div class="cat__foot">
+            <span>Композиции</span>
+            <svg viewBox="0 0 24 24"><path d="M4 12h16m0 0-6-6m6 6-6 6"/></svg>
+          </div>
+        </a>
+        <a href="#catalog" class="cat reveal" data-filter="decor">
+          <div class="cat__img"><img src="assets/img/cat-decor.png" alt="Декор"></div>
+          <div class="cat__foot">
+            <span>Декор</span>
+            <svg viewBox="0 0 24 24"><path d="M4 12h16m0 0-6-6m6 6-6 6"/></svg>
+          </div>
+        </a>
+        <a href="#catalog" class="cat reveal" data-filter="gifts">
+          <div class="cat__img"><img src="assets/img/cat-gifts.png" alt="Подарки"></div>
+          <div class="cat__foot">
+            <span>Подарки</span>
+            <svg viewBox="0 0 24 24"><path d="M4 12h16m0 0-6-6m6 6-6 6"/></svg>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CATALOG ===== -->
+  <section class="catalog" id="catalog">
+    <div class="container">
+      <div class="catalog__head">
+        <div>
+          <p class="eyebrow">Каталог</p>
+          <h2 class="section-title">Свежие работы<br>этой недели</h2>
+        </div>
+        <div class="filters" id="filters">
+          <button class="chip is-active" data-filter="all">Все</button>
+          <button class="chip" data-filter="bouquets">Букеты</button>
+          <button class="chip" data-filter="compositions">Композиции</button>
+          <button class="chip" data-filter="decor">Декор</button>
+          <button class="chip" data-filter="gifts">Подарки</button>
+        </div>
+      </div>
+
+      <div class="products" id="products">
+        <article class="product reveal" data-cat="bouquets" data-name="Букет «Нежность»" data-price="5900" data-img="assets/img/hero-calla.png">
+          <div class="product__img"><img src="assets/img/hero-calla.png" alt="Букет Нежность" loading="lazy"></div>
+          <div class="product__body">
+            <div class="product__info">
+              <h3 class="product__name">Букет «Нежность»</h3>
+              <p class="product__desc">Каллы · эвкалипт · атласная лента</p>
+            </div>
+            <div class="product__side">
+              <span class="product__price">5 900 ₽</span>
+              <button class="add-btn" aria-label="Добавить в корзину">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product reveal" data-cat="bouquets" data-name="Букет «Розовый сад»" data-price="6400" data-img="assets/img/hero-roses.png">
+          <div class="product__img"><img src="assets/img/hero-roses.png" alt="Букет Розовый сад" loading="lazy"></div>
+          <div class="product__body">
+            <div class="product__info">
+              <h3 class="product__name">Букет «Розовый сад»</h3>
+              <p class="product__desc">Садовые розы · пионовидные</p>
+            </div>
+            <div class="product__side">
+              <span class="product__price">6 400 ₽</span>
+              <button class="add-btn" aria-label="Добавить в корзину">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product reveal" data-cat="bouquets" data-name="Букет «Утро»" data-price="4200" data-img="assets/img/hero-tulips.png">
+          <div class="product__img"><img src="assets/img/hero-tulips.png" alt="Букет Утро" loading="lazy"></div>
+          <div class="product__body">
+            <div class="product__info">
+              <h3 class="product__name">Букет «Утро»</h3>
+              <p class="product__desc">Белые тюльпаны · 25 шт</p>
+            </div>
+            <div class="product__side">
+              <span class="product__price">4 200 ₽</span>
+              <button class="add-btn" aria-label="Добавить в корзину">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product reveal" data-cat="bouquets" data-name="Букет «Эустома»" data-price="5100" data-img="assets/img/prod-eustoma.png">
+          <div class="product__img"><img src="assets/img/prod-eustoma.png" alt="Букет Эустома" loading="lazy"></div>
+          <div class="product__body">
+            <div class="product__info">
+              <h3 class="product__name">Букет «Эустома»</h3>
+              <p class="product__desc">Эустома · крафт · лента</p>
+            </div>
+            <div class="product__side">
+              <span class="product__price">5 100 ₽</span>
+              <button class="add-btn" aria-label="Добавить в корзину">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product reveal" data-cat="compositions" data-name="Композиция «Ветви»" data-price="4600" data-img="assets/img/cat-compositions.png">
+          <div class="product__img"><img src="assets/img/cat-compositions.png" alt="Композиция Ветви" loading="lazy"></div>
+          <div class="product__body">
+            <div class="product__info">
+              <h3 class="product__name">Композиция «Ветви»</h3>
+              <p class="product__desc">Сухоцветы · керамика ручной работы</p>
+            </div>
+            <div class="product__side">
+              <span class="product__price">4 600 ₽</span>
+              <button class="add-btn" aria-label="Добавить в корзину">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product reveal" data-cat="compositions" data-name="Букет «Сухоцветы»" data-price="3800" data-img="assets/img/prod-dried.png">
+          <div class="product__img"><img src="assets/img/prod-dried.png" alt="Сухой букет" loading="lazy"></div>
+          <div class="product__body">
+            <div class="product__info">
+              <h3 class="product__name">Букет «Сухоцветы»</h3>
+              <p class="product__desc">Пампасная трава · колосья</p>
+            </div>
+            <div class="product__side">
+              <span class="product__price">3 800 ₽</span>
+              <button class="add-btn" aria-label="Добавить в корзину">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product reveal" data-cat="decor" data-name="Ваза «Волна»" data-price="3400" data-img="assets/img/cat-decor.png">
+          <div class="product__img"><img src="assets/img/cat-decor.png" alt="Ваза Волна" loading="lazy"></div>
+          <div class="product__body">
+            <div class="product__info">
+              <h3 class="product__name">Ваза «Волна»</h3>
+              <p class="product__desc">Керамика · матовая глазурь</p>
+            </div>
+            <div class="product__side">
+              <span class="product__price">3 400 ₽</span>
+              <button class="add-btn" aria-label="Добавить в корзину">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product reveal" data-cat="decor" data-name="Аромасвеча «Тёплый воск»" data-price="2200" data-img="assets/img/prod-candle.png">
+          <div class="product__img"><img src="assets/img/prod-candle.png" alt="Аромасвеча" loading="lazy"></div>
+          <div class="product__body">
+            <div class="product__info">
+              <h3 class="product__name">Аромасвеча «Тёплый воск»</h3>
+              <p class="product__desc">Соевый воск · 40 часов</p>
+            </div>
+            <div class="product__side">
+              <span class="product__price">2 200 ₽</span>
+              <button class="add-btn" aria-label="Добавить в корзину">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product reveal" data-cat="gifts" data-name="Набор «ЯСНА»" data-price="4900" data-img="assets/img/prod-giftset.png">
+          <div class="product__img"><img src="assets/img/prod-giftset.png" alt="Подарочный набор" loading="lazy"></div>
+          <div class="product__body">
+            <div class="product__info">
+              <h3 class="product__name">Набор «ЯСНА»</h3>
+              <p class="product__desc">Цветы · шоколад · открытка</p>
+            </div>
+            <div class="product__side">
+              <span class="product__price">4 900 ₽</span>
+              <button class="add-btn" aria-label="Добавить в корзину">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product reveal" data-cat="gifts" data-name="Коробка с цветами" data-price="5500" data-img="assets/img/cat-gifts.png">
+          <div class="product__img"><img src="assets/img/cat-gifts.png" alt="Коробка с цветами" loading="lazy"></div>
+          <div class="product__body">
+            <div class="product__info">
+              <h3 class="product__name">Коробка с цветами</h3>
+              <p class="product__desc">Шляпная коробка · атласный бант</p>
+            </div>
+            <div class="product__side">
+              <span class="product__price">5 500 ₽</span>
+              <button class="add-btn" aria-label="Добавить в корзину">+</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SPOTLIGHT + WHY ===== -->
+  <section class="spotlight" id="about">
+    <div class="container spotlight__grid">
+      <a href="#catalog" class="collection reveal">
+        <img src="assets/img/collection-peony.png" alt="Коллекция Нежность в деталях" class="collection__img">
+        <div class="collection__overlay"></div>
+        <div class="collection__content">
+          <p class="eyebrow eyebrow--light">Коллекция</p>
+          <h2 class="collection__title">Нежность<br>в деталях</h2>
+          <span class="collection__cta">
+            Смотреть
+            <svg viewBox="0 0 24 24"><path d="M4 12h16m0 0-6-6m6 6-6 6"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <div class="why">
+        <p class="eyebrow">Почему ЯСНА?</p>
+        <ul class="why__list">
+          <li class="why__item reveal">
+            <svg viewBox="0 0 24 24"><path d="M5 19C5 9 12 4 20 4c0 8-5 15-15 15Z"/><path d="M5 19c3-5 7-8 10-9.5"/></svg>
+            <p>Свежие цветы<br>каждый день</p>
+          </li>
+          <li class="why__item reveal">
+            <svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.7-9.5-9C1 7.5 3.5 4.5 6.8 4.5c2 0 3.9 1.1 5.2 3 1.3-1.9 3.2-3 5.2-3 3.3 0 5.8 3 4.3 6.5-2 4.3-9.5 9-9.5 9Z"/></svg>
+            <p>Авторские букеты<br>и композиции</p>
+          </li>
+          <li class="why__item reveal">
+            <svg viewBox="0 0 24 24"><path d="M7 3h10l4 6-9 12L3 9l4-6Z"/><path d="M3 9h18M9.5 3 8 9l4 12M14.5 3 16 9l-4 12"/></svg>
+            <p>Стильный декор<br>для дома и офиса</p>
+          </li>
+          <li class="why__item reveal">
+            <svg viewBox="0 0 24 24"><path d="M2 6h12v11H2zM14 9h4l4 4v4h-8"/><circle cx="7" cy="19" r="2"/><circle cx="17.5" cy="19" r="2"/></svg>
+            <p>Быстрая доставка<br>по городу</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="spotlight__logo">
+        <span class="logo__mark">ЯСНА</span>
+        <span class="logo__sub">цветы и декор</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta">
+    <div class="container cta__inner">
+      <h2 class="section-title">Доставим настроение<br>уже сегодня</h2>
+      <a href="#catalog" class="btn btn--dark">
+        Выбрать подарок
+        <svg viewBox="0 0 24 24"><path d="M4 12h16m0 0-6-6m6 6-6 6"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__col footer__col--brand">
+        <a href="#" class="logo">
+          <span class="logo__mark">ЯСНА</span>
+          <span class="logo__sub">цветы и декор</span>
+        </a>
+        <p class="footer__tag">Цветы, которые говорят больше слов.</p>
+      </div>
+      <nav class="footer__col">
+        <h4>Каталог</h4>
+        <a href="#catalog">Букеты</a>
+        <a href="#catalog">Композиции</a>
+        <a href="#catalog">Декор</a>
+        <a href="#catalog">Подарки</a>
+      </nav>
+      <nav class="footer__col">
+        <h4>Компания</h4>
+        <a href="#about">О нас</a>
+        <a href="#">Доставка и оплата</a>
+        <a href="#">Отзывы</a>
+        <a href="#">Вакансии</a>
+      </nav>
+      <div class="footer__col">
+        <h4>Контакты</h4>
+        <a href="tel:+79000000000">+7 900 000-00-00</a>
+        <a href="mailto:hello@yasna.cafe">hello@yasna.cafe</a>
+        <p>Ежедневно 8:00 — 22:00</p>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© 2026 ЯСНА</span>
+      <div class="footer__social">
+        <a href="#">Telegram</a>
+        <a href="#">VK</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== CART DRAWER ===== -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer__head">
+      <h3>Корзина</h3>
+      <button class="icon-btn" id="drawerClose" aria-label="Закрыть">
+        <svg viewBox="0 0 24 24"><path d="m5 5 14 14M19 5 5 19"/></svg>
+      </button>
+    </div>
+    <div class="drawer__items" id="drawerItems">
+      <p class="drawer__empty">Пока пусто — добавьте что-нибудь нежное.</p>
+    </div>
+    <div class="drawer__foot">
+      <span>Итого</span>
+      <strong id="drawerTotal">0 ₽</strong>
+    </div>
+    <button class="btn btn--dark btn--full">Оформить заказ</button>
+  </aside>
+
+  <div class="toast" id="toast">Добавлено в корзину</div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

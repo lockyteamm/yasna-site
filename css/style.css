@@ -145,6 +145,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 }
 
 .nav { display: flex; gap: clamp(20px, 2.6vw, 42px); }
+.nav__icons { display: none; }
 .nav__link {
   position: relative;
   font-size: 11px;
@@ -197,6 +198,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   min-height: calc(100vh - 220px);
 }
 
+.hero__content { position: relative; z-index: 6; }
 .hero__title {
   font-size: clamp(40px, 5.6vw, 80px);
   font-weight: 300;
@@ -627,12 +629,15 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   }
   .nav.is-open { transform: translateY(0); }
   .nav__link { font-size: 14px; }
+  .nav__icons { display: flex; gap: 14px; margin-top: 6px; }
+  .header__actions .icon-btn:not(.cart-btn) { display: none; }
   .burger { display: flex; z-index: 95; }
 
   .hero { padding-top: 120px; }
   .hero__inner { grid-template-columns: 1fr; min-height: 0; }
-  .hero__visual { order: -1; height: clamp(300px, 52vw, 420px); }
-  .hero .btn { margin-bottom: 40px; }
+  .hero__visual { order: -1; height: clamp(380px, 52vh, 480px); }
+  .hero__slide { height: 100%; }
+  .hero .btn { margin-bottom: 0; }
 
   .cats__grid { grid-template-columns: repeat(2, 1fr); }
   .cat { border-top: 1px solid var(--line); }
@@ -645,7 +650,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 @media (max-width: 560px) {
   .products { grid-template-columns: 1fr; }
   .catalog__head { flex-direction: column; align-items: flex-start; }
-  .hero__title { font-size: clamp(38px, 11vw, 56px); }
+  .hero__title { font-size: clamp(30px, 8.6vw, 40px); }
   .footer__inner { grid-template-columns: 1fr; }
   .cta__inner { flex-direction: column; align-items: flex-start; }
 }
